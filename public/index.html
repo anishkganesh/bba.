@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>bba.</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="app-title">bba.</div>
+    <button id="notifyButton" class="notify-button">Notify</button>
+  </header>
+
+  <nav>
+    <ul>
+      <li data-tab="home" class="active">Home</li>
+      <li data-tab="activities">Activities</li>
+      <li data-tab="courses">Courses</li>
+      <li data-tab="notifications">Notifications</li>
+    </ul>
+  </nav>
+
+  <main class="container">
+    <!-- HOME TAB -->
+    <section id="home" class="tab-section">
+      <h2>Welcome to bba.</h2>
+      <p>This is your minimalistic hub for events, courses, and quick updates.</p>
+    </section>
+
+    <!-- ACTIVITIES TAB -->
+    <section id="activities" class="tab-section hidden">
+      <h2>Activities</h2>
+
+      <!-- New Activity Form -->
+      <div class="form-card">
+        <h3>Create New Activity</h3>
+        <input type="text" id="activityTitle" placeholder="Activity Title" />
+        <input type="datetime-local" id="activityDateTime" />
+        <textarea id="activityDescription" rows="2" placeholder="Activity Description"></textarea>
+        <input type="text" id="activityImageUrl" placeholder="Optional Image URL" />
+        <button id="createActivityBtn">Create</button>
+      </div>
+
+      <!-- Activities List -->
+      <div id="activitiesList"></div>
+    </section>
+
+    <!-- COURSES TAB -->
+    <section id="courses" class="tab-section hidden">
+      <h2>Course Proposals</h2>
+
+      <!-- New Course Form -->
+      <div class="form-card">
+        <h3>Propose Courses</h3>
+        <input type="text" id="courseUser" placeholder="Your Name" />
+        <input type="text" id="courseList" placeholder="Courses (comma separated)" />
+        <button id="proposeCoursesBtn">Propose</button>
+      </div>
+
+      <!-- Course Proposals List -->
+      <div id="coursesList"></div>
+    </section>
+
+    <!-- NOTIFICATIONS TAB -->
+    <section id="notifications" class="tab-section hidden">
+      <h2>Notifications Feed</h2>
+      <!-- Automatic listing of "notify" updates -->
+      <div id="notificationsFeed"></div>
+    </section>
+  </main>
+
+  <!-- Notify Modal -->
+  <div id="notifyModal" class="modal hidden">
+    <div class="modal-content">
+      <span id="closeModal" class="close">&times;</span>
+      <h3>What are you up to?</h3>
+      <input type="text" id="notifyUser" placeholder="Your Name" />
+      <textarea id="notifyMessage" rows="2" placeholder="Let everyone know"></textarea>
+      <button id="sendNotificationBtn">Send</button>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
